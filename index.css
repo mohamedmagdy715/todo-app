@@ -52,10 +52,30 @@ body{
     color: var(--lame-color);
     font-weight: 700;
 }
-.check:hover{  /* todoooooooooooooooooo */
+/* .check:hover{  */
     /* border-image: linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%); */
-    border-color: teal;
+    /* border-color: teal;
+} */
+/* gradient border on hover */
+.check:hover:not(.completed){
+    background: linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
+    border: 0;
+    position: relative;
+    border-radius: 50%;
+    z-index: 1;
 }
+.check:hover:not(.completed)::before{
+    content: '';
+    display: block;
+    background: var(--elements-background);
+    height: calc(100% - calc(2px * 2));
+    width: calc(100% - calc(2px * 2));
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: calc(50% - 2px);
+}
+
 .cross{
     color: var(--check-border-color);
 }
