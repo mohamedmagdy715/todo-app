@@ -1,0 +1,91 @@
+:root{
+    --background-color : hsl(236, 33%, 92%); /* light mode background color */
+    --background-image-mobile : url(./images/bg-mobile-light.jpg); /* light mode mobile background image */
+    --background-image-desktop : url(./images/bg-desktop-light.jpg); /* light mode desktop background image */
+    --elements-background : hsl(0, 0%, 98%); /* light todo elements background color */
+    --check-border-color : hsl(233, 11%, 84%); /* light check border color */
+    --todo-font-color : hsl(235, 19%, 35%); /* light todo font color */
+    --lame-color : hsl(236, 9%, 61%); /* light lame font color */
+}
+
+body{
+    background: var(--background-image-mobile);
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-color: var(--background-color) !important;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.main-container{
+    width: 90%;
+}
+.logo{
+    font-weight: 700;
+    color: hsl(0, 0%, 98%);
+    font-size: 36px;
+    letter-spacing: 14px;
+    float: left;
+}
+.todo-element>*{
+    background: var(--elements-background) !important;
+    font-size: 18px;
+    color: var(--todo-font-color) !important;
+    font-weight: 700;
+}
+.check{
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--check-border-color) ;
+    border-radius: 50%;
+}
+.check>*{
+    width: 50px;
+    display: none;
+}
+.check.completed{
+    background: linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
+}
+.check.completed>*{
+    display: block;
+}
+.todo-completed{
+    text-decoration: line-through;
+    color: var(--lame-color);
+    font-weight: 700;
+}
+.check:hover{  /* todoooooooooooooooooo */
+    /* border-image: linear-gradient(135deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%); */
+    border-color: teal;
+}
+.cross{
+    color: var(--check-border-color);
+}
+.clickable{
+    cursor: pointer;
+}
+.lame-color{
+    color: var(--lame-color);
+    font-weight: 400;
+}
+.strong-color{
+    color: var(--lame-color);
+    font-weight: 700;
+}
+.clickable.lame-color:hover,.strong-color:hover{
+    color: var(--todo-font-color);
+}
+.active-query{
+    color: hsl(220, 98%, 61%);
+}
+
+/* desktop media query */
+@media only screen and (min-width: 676px) {
+    body {
+        background: var(--background-image-desktop);
+    }
+    .main-container{
+        width: 40%;
+    }
+    .cross{
+        display: none;
+    }
+}

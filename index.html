@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <!-- custom css -->
+  <link rel="stylesheet" href="./index.css">
+  <!-- google-fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <title>Todo app</title>
+
+</head>
+
+<body style="text-align: center;">
+  <div class="container-fluid my-5 main-container">
+    <div class="row">
+      <div class="col logo d-flex justify-content-start">
+        TODO
+      </div>
+      <div class="col d-flex justify-content-end ">
+        <!-- change in dark mode -->
+        <img src="./images/icon-moon.svg" alt="select dark mode" 
+             class="clickable img-fluid align-self-center" onclick="toggleMode(this)">
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="input-group todo-element">
+        <div class="input-group-text p-4 border-0 ">
+          <span class="check" id="inputCheck">
+            <!-- <img src="./images/icon-check.svg" alt="check" style="width: 50%;"> -->
+          </span>
+        </div>
+        <input type="text" class="form-control border-0" id="inputTodo" placeholder="Create a new todo..">
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="list-group todo-element" id="todosHtml">
+
+      </div>
+      <div class="list-group todo-element item-a">
+        <a class="list-group-item pt-3 ps-4" aria-current="true">
+          <div class="d-flex w-100 justify-content-between  py-2">
+            <div class="lame-color" id="itemsLeft">
+              <!-- Add dynamic number -->
+              items left
+            </div>
+            <div class="d-flex w-50 justify-content-center d-none d-lg-block">
+              <span class="mx-3 active-query clickable strong-color selectors">
+                All
+              </span>
+              <span class="clickable strong-color selectors">
+                Active
+              </span>
+              <span class="mx-3 clickable strong-color selectors">
+                Completed
+              </span>
+            </div>
+            <span class="clickable lame-color" onclick="clearCompleted()">
+              Clear Completed
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="list-group todo-element mt-3 item-b d-lg-none">
+        <a class="list-group-item pt-3 ps-4" aria-current="true">
+          <div class="d-flex w-100 justify-content-center py-2">
+            <span class="mx-3 active-query clickable strong-color selectors">
+              All
+            </span>
+            <span class="clickable strong-color selectors">
+              Active
+            </span>
+            <span class="mx-3 clickable strong-color selectors">
+              Completed
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-5 lame-color">
+        Drag and drop to reorder list
+      </div>
+      <div class="mt-2 lame-color">
+        To add a todo, after typing your todo in the "Create a new todo..", press on the circle on the left of it or simply hit enter
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<!-- javascript -->
+<script src="index.js"></script>
+
+</html>
